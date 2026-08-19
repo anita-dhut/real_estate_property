@@ -55,15 +55,15 @@ export default function Footer() {
               <span>{contactInfo.email}</span>
             </div>
             
-            <div className="newsletter">
-              <h4>Subscribe to updates</h4>
-              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="Your email address" required />
-                <Button variant="primary" type="submit">Join</Button>
-              </form>
-            </div>
           </div>
+        </div>
 
+        <div className="newsletter-section-centered">
+          <h4>Subscribe to updates</h4>
+          <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+            <input type="email" placeholder="Your email address" required />
+            <Button variant="outline-light" type="submit">Join</Button>
+          </form>
         </div>
       </div>
       

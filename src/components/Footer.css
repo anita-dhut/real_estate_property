@@ -11,8 +11,9 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2.5fr 1fr 1fr 1.5fr; /* Note: kept the same to maintain space for brand etc if needed, or we can make it 2.5fr 1fr 1fr 1fr */
   gap: var(--spacing-lg);
+  margin-bottom: 4rem; /* add space between grid and newsletter */
 }
 
 .footer-statement {
@@ -120,11 +121,16 @@
   color: var(--color-surface);
 }
 
-.newsletter {
+.newsletter-section-centered {
   margin-top: 2rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.newsletter h4 {
+.newsletter-section-centered h4 {
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -135,8 +141,16 @@
 
 .newsletter-form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
+  max-width: 400px;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  width: 100%;
 }
 
 .newsletter-form input {
@@ -170,6 +184,17 @@
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+    text-align: center;
+  }
+  .contact-item {
+    justify-content: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
+  .newsletter-form {
+    justify-content: center;
+    margin: 0 auto;
   }
   .flex-between {
     flex-direction: column;
@@ -177,5 +202,6 @@
   }
   .legal-links {
     gap: 1.5rem;
+    justify-content: center;
   }
 }
