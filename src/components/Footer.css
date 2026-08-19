@@ -11,9 +11,9 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2.5fr 1fr 1fr 1.5fr; /* Note: kept the same to maintain space for brand etc if needed, or we can make it 2.5fr 1fr 1fr 1fr */
+  grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
   gap: var(--spacing-lg);
-  margin-bottom: 4rem; /* add space between grid and newsletter */
+  margin-bottom: 2rem;
 }
 
 .footer-statement {
@@ -122,8 +122,8 @@
 }
 
 .newsletter-section-centered {
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin-top: 1rem;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
