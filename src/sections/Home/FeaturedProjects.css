@@ -1,0 +1,256 @@
+.featured-showcase {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+}
+
+.showcase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2rem;
+}
+
+.showcase-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-family: var(--font-body);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.showcase-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--spacing-lg);
+}
+
+/* Large Featured Project */
+.featured-main-card {
+  display: block;
+  text-decoration: none;
+  position: relative;
+  width: 100%;
+  height: calc(540px + 1.5cm);
+  overflow: hidden;
+  background-color: var(--color-muted);
+}
+
+.featured-img-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.featured-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featured-main-card:hover .featured-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.featured-status-label {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: var(--color-surface);
+  padding: 0.5rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  z-index: 3;
+  backdrop-filter: blur(4px);
+}
+
+.featured-overlay {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%; height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.featured-info {
+  position: absolute;
+  bottom: 0; left: 0;
+  padding: 3rem;
+  color: var(--color-surface);
+  z-index: 2;
+  width: 100%;
+}
+
+.featured-info h3 {
+  font-size: 3rem;
+  color: var(--color-surface);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.explore-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-surface);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  margin-top: 2rem;
+  transition: color 0.3s;
+}
+
+.featured-main-card:hover .explore-link {
+  color: var(--color-accent);
+}
+
+/* Stacked Previews */
+.featured-previews {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.preview-card {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 1.5rem;
+  text-decoration: none;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.preview-card:hover {
+  transform: translateX(10px);
+}
+
+.preview-img-wrapper {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background-color: var(--color-muted);
+}
+
+.preview-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preview-card:hover .preview-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.preview-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-info h4 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text-light);
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.preview-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.showcase-grid.is-visible .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .featured-main-card {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  
+  .featured-main-card {
+    height: 400px;
+  }
+  
+  .featured-info {
+    padding: 2rem;
+  }
+  
+  .featured-info h3 {
+    font-size: 2rem;
+  }
+
+  .featured-previews {
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+    gap: 1.5rem;
+  }
+  
+  .preview-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+    scroll-snap-align: start;
+    gap: 1rem;
+  }
+
+  .preview-card:hover {
+    transform: none;
+  }
+}

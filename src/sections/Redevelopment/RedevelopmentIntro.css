@@ -1,0 +1,100 @@
+.redevelopment-intro {
+  padding-top: var(--spacing-xl);
+  padding-bottom: 3rem !important;
+}
+
+.redevelopment-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.redevelopment-intro-content h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 400;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.redevelopment-intro-content p {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.redevelopment-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stat-box {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-box .stat-value {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.stat-box .stat-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.redevelopment-intro-grid.is-visible .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+  .redevelopment-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .redevelopment-stats-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+  }
+  .redevelopment-stats-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .stat-box {
+    flex: 0 0 70%;
+    scroll-snap-align: center;
+    padding: 2rem 1.5rem;
+  }
+}

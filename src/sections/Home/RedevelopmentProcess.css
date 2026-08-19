@@ -1,0 +1,138 @@
+.redev-process-section {
+  padding: 4rem 0 8rem;
+  background-color: var(--color-background);
+  position: relative;
+}
+
+.redev-process-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.process-header-sticky {
+  position: sticky;
+  top: 120px;
+  padding-bottom: 2rem;
+}
+
+.process-header-content .small-label {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--color-text-light);
+}
+
+.process-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.process-subheading {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 90%;
+}
+
+.process-steps-scroll {
+  display: flex;
+  flex-direction: column;
+}
+
+.process-step-card {
+  position: relative;
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.process-step-card:first-child {
+  padding-top: 0;
+}
+
+.process-step-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.step-number-large {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-accent);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.step-icon-elegant {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.step-content h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.step-content p {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .redev-process-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .process-header-sticky {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-steps-scroll {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+  }
+  .process-steps-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  .process-step-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    border: 1px solid var(--color-border);
+    padding: 2rem 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .step-number-large {
+    font-size: 2.5rem;
+  }
+  .step-content h3 {
+    font-size: 1.75rem;
+  }
+}

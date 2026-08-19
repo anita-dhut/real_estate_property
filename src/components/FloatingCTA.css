@@ -1,0 +1,121 @@
+/* Desktop Floating WhatsApp */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  left: 2.5rem;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  z-index: 999;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-whatsapp:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Desktop Pill Button */
+.floating-cta-desktop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-md);
+  z-index: 999;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.floating-cta-desktop:hover {
+  background-color: var(--color-accent);
+  color: var(--color-surface);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.floating-cta-desktop svg {
+  transition: transform 0.4s ease;
+}
+
+.floating-cta-desktop:hover svg {
+  transform: translateX(4px);
+}
+
+/* Mobile Bottom Bar */
+.floating-cta-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .floating-cta-desktop, .floating-whatsapp {
+    display: none;
+  }
+  
+  .floating-cta-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background-color: var(--color-surface);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+    z-index: 9999;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mobile-cta-action {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    gap: 0.4rem;
+    text-decoration: none;
+    border-right: 1px solid var(--color-border);
+    transition: background-color 0.3s;
+  }
+  
+  .mobile-cta-action:last-child {
+    border-right: none;
+  }
+
+  .mobile-cta-action:active {
+    background-color: var(--color-muted);
+  }
+
+  /* Keep WhatsApp brand color subtle but present if desired, or remove for monochrome */
+  .mobile-cta-action.whatsapp {
+    color: #25D366;
+  }
+  
+  .mobile-cta-action.enquire {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+  }
+}

@@ -1,0 +1,31 @@
+.reveal-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.reveal-image-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: var(--color-surface);
+  z-index: 2;
+  transform-origin: bottom;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-image-wrapper img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-image-wrapper.revealed .reveal-image-overlay {
+  transform: scaleY(0);
+}
+
+.reveal-image-wrapper.revealed img {
+  transform: scale(1);
+}
